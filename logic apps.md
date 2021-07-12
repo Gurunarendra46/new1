@@ -27,6 +27,19 @@ This step creates a logic app resource that runs in the multi-tenant Logic Apps 
   <img src="">
 <li>When you're ready, select Review + Create. On the validation page, confirm the details that you provided, and select Create.</li>
 </ol>
+<b>step2</b><br><h4>Select the blank template</h4>
+<ol>
+  <li>After  deploying logic app, select Go to resource. Or, find and select your logic app by typing the name in the Azure search box.</li>
+  <li>The Logic Apps Designer opens and shows a page with an introduction video and commonly used triggers.</li>
+  <li>Under Templates, select Blank Logic App</li>
+  
+  </ol>
+
+
+
+
+
+
 
 
 
