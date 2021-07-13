@@ -32,8 +32,35 @@ This step creates a logic app resource that runs in the multi-tenant Logic Apps 
   <li>After  deploying logic app, select Go to resource. Or, find and select your logic app by typing the name in the Azure search box.</li>
   <li>The Logic Apps Designer opens and shows a page with an introduction video and commonly used triggers.</li>
   <li>Under Templates, select Blank Logic App</li>
-  
   </ol>
+  
+  <b>step3</b><br><h4>Add the Trigger</h4>
+  <ol>
+  <li><b>In the Logic Apps Designer, under the search box, select Select HTTP request<b></li>
+    </ol>
+  <b>step4</b><br><h4>Add the Action</h4>
+  <ol>
+  <li><b>We need to implement the Signup/SignIn Connector ,This comes Under<b> <b>Action<b></li>
+</ol>
+    
+<b>step5</b><br><h4>Add the Control</h4>
+    
+<ol>
+    <li>add  the if Connector ,and in if we need to mention <b>User Enrolled the Course or Not</b> This comes Under <b>Control<b></li>
+</ol>
+      
+ <b>step6</b><br><h4>Add the Actions</h4>
+      
+<ol>
+    <li>If Yes :add an Blob Storage to save the user Details and course that the user enrolled.<br>take the user's e-Mail and send the Thanking Mail. </li><br>
+    <li>If No :Send the e-mail to the User and in mail add the Feedback template that the reason to not interested to enrolled the Course. </li>
+    
+</ol>    
+  
+  
+  
+  
+ 
 
 
 
