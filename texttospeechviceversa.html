@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-to-speech Conversion</title>
+</head>
+<body><center>
+<!--<script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>-->
+      /*
+  sign in to the https://app.responsivevoice.org/ and get js file for text to speech and insert in ur html file
+
+  */
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7cMZznzE"></script>
+<h2>Text to Speech conversion in English</h2>
+ <textarea id="text" rows="5" cols="50" name="text"></textarea><br><br>
+  <input type="button" onclick="texttospeech()" value="submit">
+
+   <h1>Speech to Text Converter</h1>
+
+       <div class ="words" contenteditable>
+        <input onclick="TextSpeech()" type="button" value="click here and speak ">
+<p id ="speechtotext"></p>
+       </div>
+
+</center>
+
+
+<script>
+function texttospeech(){
+var text=document.getElementById("text").value;
+//document.write(text);
+responsiveVoice.speak(text);
+}
+</script>
+
+ <script>
+            function TextSpeech(){
+                var speech=true;
+                window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.interimResults=true;
+
+                const words = document.querySelector('.words');
+                words.appendChild(speechtotext);
+                recognition.addEventListener('result',e => {
+                const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
+                document.getElementById("speechtotext").innerHTML = transcript;
+                console.log(transcript);
+                });
+                if(speech == true){
+                recognition.start();
+                recognition.addEventListener('end',recognition.start);
+                }
+
+            }
+        </script>
+</body>
+</html>
