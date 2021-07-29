@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--for titling purpose-->
+    <title>get file extensions ,name and path </title>
+</head>
+<!--entire information present in body will align to center of page-->
+<body style="text-align: center;">
+    <!--heading named Extension Checker will be in color of Blue-->
+    <h1 style="color: blue;">file type finder</h1>
+    <!--to get letters in bold -->
+    <b>Select the file to get "file type ","details" of selected file</b>
+    <!-- for paragraph format-->
+    <p>Select a file and click on the button
+       to check the file type and it's extension.</p>
+    <!--for the user input ,use Form-->
+    <form>
+        <!--here input type in file which need to chosen for further executions with id file1-->
+        <input type="file" id="file1" />
+        <br><br><p></p><br>
+        <!--here button and it goes to javscript file like function call-->
+        <input type="button" value="click here to Check " onclick="checkExtension();"/>
+
+
+    </form>
+    <h1>Save images here to local storage</h1>
+    <input type="file" id="myFileInput">
+    <script language="javascript" >
+    document.querySelector("#myFileInput").addEventListner("Change" function(){
+    console.log(this.files);
+    });
+    </script>
+
+    <!-- to display the outputs-->
+    <!--<p>The file extension is: <span class="output"></span></p>
+    <p>The file name is: <span class="output1"></span></p>
+    <p>The file name with path is: <span class="output2"></span></p>-->
+    <script language="javascript">
+    //assgning name as checkextension
+        function checkExtension() {
+        //assigning file1 html element to fileNmae
+
+            fileName = document.querySelector('#file1').value;
+        //to check the name of the file which is uploaded from user
+            console.log(fileName);
+        //to split the upload images if filename has "." or "/"
+            //extension2=fileName.split('\').pop();
+            extension = fileName.split('.').pop();
+            extension1=fileName.split(/(\\|\/)/g).pop()
+            //extension2 = fileName.split('').pop();
+        //to add popped file to extension and then to output for display
+            //document.querySelector('.output').textContent = extension;
+            //document.querySelector('.output1').textContent = extension1;
+            //document.querySelector('.output2').textContent = fileName;
+
+            //var type=document.querySelector('.output').textContent;
+            document.querySelector('.output').textContent = extension;
+            document.querySelector('.output1').textContent = extension1;
+            document.querySelector('.output2').textContent = fileName;
+
+            var type=document.querySelector('.output').textContent;
+            var type2=document.querySelector('.output1').textContent;
+            var type3=document.querySelector('.output2').textContent
+            if(type){
+
+            //document.write(document.querySelector('.output').textContent)
+
+            document.write("it's "+ type + " file"+"<br>")
+            document.write("The file name is: "+type2+"<br>")
+            document.write("The file name with path is: "+type3)
+
+            }
+/*
+            this is what i tried but simply we can get by mentioning above two lines
+            else if(type == "docx"){
+            document.write("it's docx file")
+            }
+            else if(type=="jpg" || "png" || "jpeg"){
+            //window.alert("it's image file");
+            document.write("it's image file")}
+            else if(type == "torrent"){
+            document.write("it's torrent file")
+            }
+            else{
+            document.write("sorry,unable to find file type")
+            }
+*/
+
+
+
+};
+
+    </script>
+
+
+</body>
+
+</html>
