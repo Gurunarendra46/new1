@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-to-speech Conversion</title>
+</head>
+<body><center>
+<!--<script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>-->
+  /*
+  sign in to the https://app.responsivevoice.org/ and get js file for text to speech and insert in ur html file
+  
+  */
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7cMZznzE"></script>
+<h2>text to speech conversion in english</h2>
+ <textarea id="text" rows="10" cols="10" name="text"></textarea>
+  <input type="button" onclick="texttospeech()" value="submit">
+</center>
+<script>
+function texttospeech(){
+var text=document.getElementById("text").value;
+//document.write(text);
+responsiveVoice.speak(text);
+}
+</script>
+</body>
+</html>
